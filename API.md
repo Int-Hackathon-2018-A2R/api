@@ -33,28 +33,35 @@ Every response is a JSON blob and contains a status code under key "status".
         * phone
         * email
 
-* GET **uid**
+* type **PrivateServiceData**
+    * ServiceData
+    * vk, instagram, etc...
+        * token
+    * phone, email – not applicable
+
+* GET **login**
     * input
-        * ServiceData
+        * PrivateServiceData
     * output
-        * uid – Instafriends user id
+        * token – Instafriends token
     * desc
-      **uid** returns the user's id. If the user is known she gets her existing id, otherwise – a new id is generated.
+    
+      **login** returns a new token, the server must recognize the user by one of his services.
 
 * POST **enroll\_service**
     * input
-        * ServiceData
+        * PrivateServiceData
     * desc
     
       **enroll\_service** adds services to the database.
 
 * POST **redeem\_code**
     * input
-        * sec_code – secure code
+        * code
 
     * desc
     
-      **redeem\_code** creates a connection. See below for details.
+      See below for details.
 
 ## Code
 
