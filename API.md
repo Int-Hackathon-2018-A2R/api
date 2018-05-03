@@ -69,10 +69,11 @@ The code is a JSON blob, transmitted via one of the supported channels. The firs
 
 * sec_code
     * services – array of services
-    * hmac – proof of authority, see below for crypto params
+    * time – time of generation
+* hmac – proof of authority for sec\_code, see below for crypto params
 * services – unsigned service data
 
 ## Crypto
 
-* hmac: sha256, 32-byte keys
+* hmac: sha256, 32-byte keys, tokens as keys?
 * password hashing: argon2 (time=3, memory=32*1024, threads=4, keylen=32)
