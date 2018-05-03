@@ -39,7 +39,7 @@ Every response is a JSON blob and contains a status code under key "status".
         * token
     * phone, email – not applicable
 
-* GET **login**
+* POST **login**
     * input
         * PrivateServiceData
     * output
